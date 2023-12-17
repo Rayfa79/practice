@@ -1,0 +1,15 @@
+<div class="row">
+<!--at med screen size and above component takes up 5/12 width space-->
+  <div class="col-md-5">
+    <app-recipe-list [recipes]="recipes"></app-recipe-list>
+  </div>
+
+<!--in SAME row this component takes up 7/12ths of width-->
+  <div class="col-md-7" >
+    <app-recipe-details *ngIf="selectedRecipe;else altText" [recipe]="selectedRecipe"></app-recipe-details>
+
+    <ng-template #altText>
+      <p>Please Select a Recipe</p>
+    </ng-template>
+  </div>
+</div>
